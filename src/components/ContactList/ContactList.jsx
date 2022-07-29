@@ -21,7 +21,8 @@ ContactList.propTypes = {
     filter: PropTypes.arrayOf(PropTypes.shape(
         {
             name: PropTypes.string.isRequired,
-            number:PropTypes.string.isRequired,
+            number: PropTypes.string.isRequired,
+            id: PropTypes.string.isRequired
         }
     )),
     onDelete: PropTypes.func.isRequired

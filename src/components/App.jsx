@@ -66,7 +66,7 @@ class App extends React.Component{
         <h1>Phonebook</h1>
         <Phonebook addContact={this.addContact} />
         <h2>Contacts</h2>
-        <Filter onChange={this.onFilterChange} />
+        <Filter onChange={this.onFilterChange} filter={filter.name} />
         <ContactList filter={filter} onDelete={this.onDelete} />
       </div>
     )
