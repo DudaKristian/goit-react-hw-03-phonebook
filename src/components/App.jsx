@@ -53,9 +53,11 @@ class App extends React.Component{
   };
 
   componentDidMount() {
-
-    const parsedContacts = JSON.parse(localStorage.getItem("contacts"))
-    this.setState({contacts: parsedContacts})
+    if (localStorage.getItem) {
+      const parsedContacts = JSON.parse(localStorage.getItem("contacts"))
+      this.setState({ contacts: parsedContacts })
+    }
+    
   }
 
   render() {
@@ -66,7 +68,7 @@ class App extends React.Component{
         <h1>Phonebook</h1>
         <Phonebook addContact={this.addContact} />
         <h2>Contacts</h2>
-        <Filter onChange={this.onFilterChange} filter={filter.name} />
+        <Filter onChange={this.onFilterChange} filter={this.state.filter} />
         <ContactList filter={filter} onDelete={this.onDelete} />
       </div>
     )

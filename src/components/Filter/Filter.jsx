@@ -22,11 +22,7 @@ const Filter = ({onChange, filter}) => {
 
 Filter.propTypes = {
     onChange: PropTypes.func.isRequired,
-    filter: PropTypes.arrayOf(PropTypes.shape(
-        {
-            name: PropTypes.string.isRequired,
-        }
-    )),
+    filter: PropTypes.string.isRequired,
 }
 
 export default Filter
